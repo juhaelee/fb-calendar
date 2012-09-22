@@ -1,0 +1,52 @@
+<div id="bubbleClose"></div>
+<div id="bubbleContent" style="font-size:12px;color:#666666">
+	<div id="bubbleHeader" style="position:absolute;background-color:#5C72A3;color:white;top:5px;right:5px;left:5px; padding: 5px 10px;">New Event
+	</div>
+	<div id="bubbleExit" style="position:absolute;background-color:white;right:10px;top:10px;width: 15px;height:15px"><a id="exit_addEvent" class="delete" href="#" style="position:absolute;top:4px;left:4px"></a></div>
+	<div id="bubbleDetails" style="position:absolute;top:40px;left:15px">	
+		<form id="event-details">
+			<table style="text-align:right;font-size:11px" cellspacing="0" border="0" cellpadding="0">
+				<tr valign="top">
+					<td style="width:50px;padding-right:5px;padding-top:3px">Name</td>
+					<td><input type="text" class="fb-input" name="name" id="name" style="width:300px;border-bottom:none" placeholder="ex: Birthday Party"/></td>
+				</tr>
+				<tr valign="top">
+					<td style="width:50px;padding-right:5px;padding-top:3px">Details</td>
+					<td><textarea class="fb-input" name="details" id="details" style="border-bottom:none;resize:none;width:300px;height:47px;padding-top:3px;font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;font-size:11px" placeholder="Add more info"/></td>
+				</tr>
+				<tr valign="top">
+					<td style="width:50px;padding-right:5px;padding-top:3px">Where</td>
+					<td><input type="text" class="fb-input" name="where" id="where" style="width:300px;" placeholder="Add a place?"/></td>
+				</tr>
+				<tr valign="top">
+					<td style="width:50px;padding-right:5px;padding-top:3px">From</td>
+					<td>
+						<input type="text" class="fb-input" name="startfromday" id="startfromday" style="float:left;width:70px;border-top:none"/>
+						<input type="text" class="fb-input" name="startfromtime" id="startfromtime" style="float:left;width:60px;border-top:none;border-left:none" placeholder="Add time?"/>
+						<div style="position:absolute;left:200px;top:100px">To</div>
+						<input type="text" class="fb-input" name="endtoday" id="endtoday" style="float:left;width:70px;border-top:none;margin-left:27px"/>
+						<input type="text" class="fb-input" name="endtotime" id="endtotime" style="float:left;width:60px;border-top:none;border-left:none" placeholder="Add time?"/>
+					</td>
+				</tr>
+				<tr valign="top">
+					<td style="width:50px;padding-right:5px;padding-top:9px">Calendar</td>
+					<td valign="bottom" style="height:30px;">
+						<select style="width:305px;margin-top:6px">
+							<% for(var x = 0; x < calendars.length; x++) { %>
+							<option value="<%=calendars[x]%>"><%=calendars[x]%></option>
+							<% } %>
+						</select>
+					</td>
+				</tr>
+				<div style="position:absolute;top:148px;right:0px;">
+					<a id="editEvent" class="uibutton disable" href="#">Edit event</a>
+					<a id="createEvent" class="uibutton confirm" href="#">Create event</a>
+				</div>
+			</table>
+		</form>
+	</div>
+</div>
+<div id="prong" class="prong bottom-prong" style="left:182px">
+	<div id="prong-img-01" class="prong-db"></div>
+	<div id="prong-img-02" class="prong-lb"></div>
+</div>

@@ -1,0 +1,25 @@
+<div id="menu">
+</div>
+<div id="calendar" style="font-weight:normal;position:relative">
+</div>
+<div id="add-event" style="z-index:1007;width:400px;visibility:hidden;top:10px;height:220px;display:none" class="bubble">
+</div>
+
+<script>
+	var onResize = function(){
+		if($(window).height() >= 316){
+			$("#calendar").css("height", $(window).height()-55);
+		}
+		else{
+			 $("#calendar").css("height", 316);
+		}
+	}
+	//set calendar container height on load
+	$(document).ready(function () {
+		onResize();
+	});
+	//set calendar container height on resize
+	$(window).resize(function() {
+		onResize();
+	});
+</script>

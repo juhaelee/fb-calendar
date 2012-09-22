@@ -1,0 +1,54 @@
+<div id="menu_left" class="uibutton-toolbar" style="float:left;">
+	<div class="uibutton-group">
+		<a id="menu_left_mycalendars" class="uibutton more" href="#">My Calendars</a>
+		<a id="menu_left_friendscalendars" class="uibutton more disable" href="#">Friends Calendars</a>
+		<a id="menu_left_events" class="uibutton disable" href="#">Events</a>
+	</div>
+	<div id="menu_left_hiddenplaceholder">
+		<% if(calendarOption) { %>
+			<div id="calendar-dropdown" class="cal-dropdown">
+				<div id="cal-dropdown_top" style="padding:5px 7px;">
+					<% if(calendarOption === "#menu_left_mycalendars") { %>
+						<input name="addNewCalendar" type="text" class="fb-input" style="border-width: 1px 0px 1px 1px;float:left;" placeholder=" Create a new calendar"/>
+						<a id="cal-dropdown_top_addNewCal" class="uibutton confirm add" style="height:13px;width:16px" href="#"></a>
+					<% } else if(calendarOption === "#menu_left_friendscalendars") { %>
+						<input type="text" class="fb-input" style="border-width: 1px 0px 1px 1px;float:left;" placeholder=" Search for friends"/>
+						<a class="uibutton confirm search" style="height:13px;width:16px" href="#"></a>
+					<% } %>
+				</div>
+				<div id="cal-dropdown_bottom" style="position:relative;max-height:180px;overflow-y:auto">
+				
+				</div>
+			</div>
+		<% }%>
+	</div>
+</div>
+
+<div id="menu_right" class="uibutton-toolbar" style="text-align:right;">
+	<div class="uimonth"><%= currentMonth %> <%= currentDayMonth %> <%= currentYear %></div>
+	<a id="menu_right_today" class="uibutton" href="#">Today</a>
+	<div id="menu_right_calendarmode" class="uibutton-group">
+		<% if(calendarType === "day") { %>
+			<a class="uibutton selected" href="#">Day</a> 
+			<% }
+		else { %>
+			<a class="uibutton disable" href="#">Day</a> 
+			<% } %>
+		<% if(calendarType === "week") { %>
+				<a class="uibutton selected" href="#">Week</a> 
+			<% }
+		else { %>
+				<a class="uibutton disable" href="#">Week</a> 
+			<% } %>
+		<% if(calendarType === "month") { %>
+				<a class="uibutton selected" href="#">Month</a> 
+			<% }
+		else { %>
+				<a class="uibutton" href="#">Month</a> 
+			<% } %>
+	</div>
+	<div id="menu_right_prevnextmonth"class="uibutton-group">
+		<a id="menu_right_prevnextmonth_prevmonth" class="uibutton prev" href="#">&nbsp;</a>
+		<a id="menu_right_prevnextmonth_nextmonth" class="uibutton next" href="#">&nbsp;</a>
+	</div>
+</div>

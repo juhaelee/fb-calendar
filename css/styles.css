@@ -1,0 +1,486 @@
+body {
+	font-family: 'lucida grande',tahoma,verdana,arial,sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+	color: #333;
+}
+
+table {
+	display: table;
+	border-collapse: separate;
+	border-color: gray;
+	border-spacing: 0px;
+}
+
+td, th {
+	vertical-align: inherit;
+}
+
+div {
+	display: block;
+}
+
+.uimonth { 
+    position: relative; 
+    z-index: 1;
+    overflow: visible; 
+    display: inline-block; 
+    top: -4px;
+    margin: 0;
+    text-decoration: none; 
+    text-align: right;
+    font: bold 11px/normal 'lucida grande', tahoma, verdana, arial, sans-serif; 
+    white-space: nowrap; 
+    /* outline: none; */
+    color: #333; 
+    zoom: 1; 
+    *display: inline; 
+    width: 114px;
+    padding-right: 6px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- BUTTON */
+
+.uibutton { 
+    position: relative; 
+    z-index: 1006;
+    overflow: visible; 
+    display: inline-block; 
+    padding: 0.3em 0.6em 0.375em; 
+    border: 1px solid #999; 
+    border-bottom-color: #888;
+    margin: 0;
+    text-decoration: none; 
+    text-align: center;
+    font: bold 11px/normal 'lucida grande', tahoma, verdana, arial, sans-serif; 
+    white-space: nowrap; 
+    cursor: pointer; 
+    /* outline: none; */
+    color: #333; 
+    background-color: #eee;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#f5f6f6), to(#e4e4e3));
+    background-image: -moz-linear-gradient(#f5f6f6, #e4e4e3);
+    background-image: -o-linear-gradient(#f5f6f6, #e4e4e3);
+    background-image: linear-gradient(#f5f6f6, #e4e4e3);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#f5f6f6', EndColorStr='#e4e4e3'); /* for IE 6 - 9 */
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #fff;
+    /* IE hacks */
+    zoom: 1; 
+    *display: inline; 
+}
+
+.uibutton:hover,
+.uibutton:focus,
+.uibutton:active {
+    border-color: #777 #777 #666;
+}
+
+.uibutton:active {
+    border-color: #aaa;
+    background: #ddd;
+    filter: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* overrides extra padding on button elements in Firefox */
+.uibutton::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+
+.uibutton.selected {
+    border-color: #777 #777 #666;
+}
+
+.uibutton.selected {
+    border-color: #aaa;
+    background: #ddd;
+    filter: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* ............................................................................................................. Icons */
+.uibutton.more:before {
+    content: "";
+    position: relative; 
+    float:right;
+    width: 9px;
+	height: 6px;
+    background: url(../img/fbicons01.png) no-repeat -901px -68px;;
+    margin: 4px 0 0 5px;
+}
+
+.uibutton.prev:before {
+	content: "";
+    position: relative; 
+    float: left;
+	background: url(../img/fbicons01.png) no-repeat -820px -75px;
+	width: 4px;
+	height: 8px;
+	margin: 4px -3px 0 0;
+}
+
+.uibutton.next:before {
+	content: "";
+    position: relative; 
+    float: right;
+	background: url(../img/fbicons01.png) no-repeat -826px -75px;
+	width: 4px;
+	height: 8px;
+	margin: 4px 0 0 -3px;
+}
+
+.uibutton.add:before {
+	content: "";
+    position: relative; 
+    float: right;
+	background: url(../img/fbicons02.png) no-repeat -264px -24px; 
+	width: 8px; 
+	height: 8px; 
+	margin: 3px 4px 0 0;
+}
+
+.uibutton.search:before {
+	content: "";
+    position: relative; 
+    float: right;
+	background: url(../img/fbicons02.png) no-repeat -138px -22px;
+	width: 11px;
+	height: 12px;
+	margin: 1px 3px 0 0;
+}
+
+.lock {
+	background: url(../img/fbicons02.png) no-repeat -20px -8px; 
+	width: 9px; 
+	height: 11px;
+}
+
+.delete {
+	background: url(../img/fbicons01.png) no-repeat -883px -68px; 
+	width: 7px; 
+	height: 7px;
+}
+/* ------------------------------------------------------------------------------------------------------------- BUTTON EXTENSIONS */
+
+/* ............................................................................................................. Large */
+
+.uibutton.large {
+    font-size: 13px;
+}
+
+/* ............................................................................................................. Submit, etc */
+
+.uibutton.confirm {
+    border-color: #29447e #29447e #1a356e;
+    color: #fff;
+    background-color: #5B74A8;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#637bad), to(#5872a7));
+    background-image: -moz-linear-gradient(#637bad, #5872a7);
+    background-image: -o-linear-gradient(#637bad, #5872a7);
+    background-image: linear-gradient(#637bad, #5872a7);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#637bad', EndColorStr='#5872a7'); /* for IE 6 - 9 */
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #8a9cc2;
+}
+
+.uibutton.confirm:active {
+    border-color: #29447E;
+    background: #4F6AA3;
+    filter: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* ............................................................................................................. Special */
+
+.uibutton.special {
+    border-color: #3b6e22 #3b6e22 #2c5115;
+    color: #fff;
+    background-color: #69a74e;
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#75ae5c), to(#67a54b));
+    background-image: -moz-linear-gradient(#75ae5c, #67a54b);
+    background-image: -o-linear-gradient(#75ae5c, #67a54b);
+    background-image: linear-gradient(#75ae5c, #67a54b);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#75ae5c', EndColorStr='#67a54b'); /* for IE 6 - 9 */
+    -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+    -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1), inset 0 1px 0 #98c286;
+}
+
+.uibutton.special:active {
+    border-color: #3b6e22;
+    background: #609946;
+    filter: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+/* ............................................................................................................. Disable */
+
+.uibutton.disable {
+    z-index: 0;
+    border-color: #c8c8c8;
+    color: #b8b8b8;
+    background: #f2f2f2;
+    cursor: default;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.uibutton.confirm.disable {
+    color: #fff;
+    border-color: #94a2bf;
+    background: #adbad4;
+}
+
+.uibutton.special.disable {
+    color: #fff;
+    border-color: #9db791;
+    background: #b4d3a7;
+}
+
+.uibutton.disable.icon:before,
+.uibutton.disable.icon:after {
+    opacity: 0.5;
+}
+
+.uibutton.disable.fbicons01:before,
+.uibutton.disable.fbicons01:after {
+    opacity: 0.5;
+}
+
+.uibutton.disable.fbicons02-00:before,
+.uibutton.disable.fbicons02-00:after {
+    opacity: 0.5;
+}
+
+.uibutton.disable.fbicons02-01:before,
+.uibutton.disable.fbicons02-01:after {
+    opacity: 0.5;
+}
+/* ------------------------------------------------------------------------------------------------------------- BUTTON GROUPS */
+
+.uibutton-group {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* IE hacks */
+    zoom: 1; 
+    *display: inline; 
+}
+
+.uibutton + .uibutton,
+.uibutton + .uibutton-group,
+.uibutton-group + .uibutton,
+.uibutton-group + .uibutton-group {
+    margin-left: 3px;
+}
+
+.uibutton-group li {
+    float: left;
+    padding: 0;
+    margin: 0;
+}
+
+.uibutton-group .uibutton {
+    float: left;
+    margin-left: -1px; 
+}
+
+.uibutton-group .uibutton:hover,
+.uibutton-group .uibutton:focus,
+.uibutton-group .uibutton:active {
+    z-index:2;
+}
+
+.uibutton-group > .uibutton:first-child,
+.uibutton-group li:first-child .uibutton { 
+    margin-left: 0; 
+}
+
+/* ------------------------------------------------------------------------------------------------------------- BUTTON CONTAINER */
+/* For mixing buttons and button groups, e.g., in a navigation bar */
+
+.uibutton-toolbar {
+    padding: 6px;
+    border-top: 1px solid #ccc;
+    background: #f2f2f2;
+}
+
+.uibutton-toolbar .uibutton,
+.uibutton-toolbar .uibutton-group {
+    vertical-align: bottom;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- MENU */
+
+.cal-dropdown {
+	position: absolute;
+	width: 235px;
+	border-left: solid thin #777777;
+	border-right: solid thin #777777;
+	border-bottom: double #777777;
+	background-color: #ffffff;
+	z-index:1005;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- FORMS */
+
+.fb-input {
+	display: block;
+	margin: 0;
+	padding: 0;
+	padding-left: 3px;
+	border: solid #BDC7D8;
+	border-width: 1px 1px;
+	height: 21px;
+	width: 185px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- CALENDAR */
+.daynames-table {
+	color: #555;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.dayname {
+	font-weight: normal;
+	font-size: 12px;
+	text-align: left;
+	padding: 2px 0 2px 5px;
+}
+
+.event-container {
+	color: #555;
+	font-size: 11px;
+	position: absolute;
+	top: 20px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	border-right: 1px solid #DDD;
+	overflow: hidden;
+	width: 100%;
+	border-top: 1px solid #DDD;
+}
+
+.month-row {
+	position: absolute;
+	width: 100%;
+	overflow: hidden;
+}
+
+.bg-table {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	table-layout: fixed;
+}
+
+.bg-table-day {
+	border-left: 1px solid #DDD;
+	border-bottom:  1px solid #DDD;
+}
+
+.grid {
+	position: relative;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.today {
+	background-color:#DADFEA ;
+}
+
+.selectday {
+	background-color:#FEF8CB;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- EVENT BUBBLE */
+
+.bubble {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	background: white;
+	border: 1px solid #CCC;
+	position: absolute;
+	-moz-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+	-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .2);
+}
+
+.prong {
+	position: absolute;
+	height: 9px;
+	width: 18px;
+	overflow: hidden;
+}
+
+.bottom-prong {
+	bottom: -9px;
+}
+
+.top-prong {
+	top: -9px;
+}
+
+.prong-db {
+	border: 9px solid;
+	border-color: #CCC transparent;
+	border-bottom-width: 0;	
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.prong-lb {
+	border: 8px solid;
+	border-color: white transparent;
+	left: 1px;
+	position: absolute;
+	top: 0;
+	border-bottom-width: 0;
+}
+
+.prong-dt {
+	border: 9px solid;
+	border-color: #CCC transparent;
+	border-top-width: 0;	
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index:1008;
+}
+
+.prong-lt{
+	border: 8px solid;
+	border-color: white transparent;
+	left: 1px;
+	position: absolute;
+	bottom: 0;
+	border-top-width: 0;
+	z-index:1008;
+}
+
+/* ------------------------------------------------------------------------------------------------------------- EVENT MONTH CAL */
+.stc{
+	vertical-align: top;
+}
+
+.sts{
+	line-height: 10px;
+	padding-bottom: 2px;
+}

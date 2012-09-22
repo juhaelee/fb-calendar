@@ -1,0 +1,94 @@
+<table id="daynamesTable" cellpadding="0" cellspacing="0" class="daynames-table">
+	<!-- header -->
+	<tbody>
+		<tr>
+			<% for(var i = 0; i < 7; i++) { %>
+				<th class="dayname" title="<%=dayNamesShort[i] %>"><%=dayNamesShort[i] %></th>
+			<% } %>
+		</tr>
+	</tbody>
+</table>
+
+<!-- main calendar body -->
+<div id="eventsTable" class="event-container">
+	<% var start = -(dayNames.indexOf(startDays[monthNames.indexOf(currentMonth)])); %>
+	<% var totweek = totalWeeksPerMonth[monthNames.indexOf(currentMonth)]; %>
+	<% for(var i = 0; i < totweek; i++) { %>
+		<div class="month-row" style="top:<%= (100.000/totweek)*i %>%;height:<%= (100.000/totweek)%>%;">
+			
+			<table cellpadding="0" cellspacing="0" class="grid">
+				<tbody>
+					<tr id="dayNumber" style="position:relative;z-index:1004">
+						<% for( var j = 0; j < 7; j++) { %>
+							<% if(start < 0){ %>
+								<td class="cal-title">
+									<% start ++; %>
+									<% if(currentMonth == "January") { %>
+										<span style="padding-left:3px;color:#AAA"><%= parseInt(totalDays[monthNames.indexOf('December')])+start %></span>
+									<% } else {%>
+										<span style="padding-left:3px;color:#AAA"><%= parseInt(totalDays[monthNames.indexOf(currentMonth)-1])+start %></span>
+									<% } %>
+								</td>
+							<% } else if(start >= 0 && start < totalDays[monthNames.indexOf(currentMonth)]) { %>
+								<% if( start == 0) { %>
+									<td class="cal-title" >
+										<% start++; %>
+										<span style="padding-left:3px"><%= monthNamesShort[(monthNames.indexOf(currentMonth))] %> <%= start %></span>
+									</td>
+								<% } else { %>
+									<td class="cal-title">
+										<% start++; %>
+										<span style="padding-left:3px"><%= start %></span>
+									</td>
+								<% } %>
+							<% } else if(start >= totalDays[monthNames.indexOf(currentMonth)]) { %>
+								<% if(start == totalDays[monthNames.indexOf(currentMonth)]) { %>
+									<td class="cal-title">
+										<% start++; %>
+										<% if(currentMonth == "December") { %>
+											<span style="padding-left:3px;color:#AAA"><%= monthNamesShort[0] %> <%= start-parseInt(totalDays[monthNames.indexOf(currentMonth)]) %>
+										<% } else { %>
+											<span style="padding-left:3px;color:#AAA"><%= monthNamesShort[(monthNames.indexOf(currentMonth))+1] %> <%= start-parseInt(totalDays[monthNames.indexOf(currentMonth)]) %></span>
+										<% } %>
+									</td>
+								<% } else { %>
+									<td class="cal-title">
+										<% start++; %>
+										<span style="padding-left:3px;color:#AAA"><%= start-parseInt(totalDays[monthNames.indexOf(currentMonth)]) %></span>
+									</td>
+								<% } %>
+							<% } %>
+						<% } %>
+					</tr>
+					<tr>
+						<td rowspan="2"></td>
+						<td rowspan="2"></td>
+						<td rowspan="2"></td>
+						<td rowspan="2"></td>
+						<td rowspan="2"></td>
+						<td rowspan="2"></td>
+						<td rowspan="2"></td>
+					</tr>
+					<tr>
+					</tr>
+					<tr>
+					</tr>
+				</tbody>
+			</table>
+			
+			<table cellpadding="0" cellspacing="0" class="bg-table">
+				<tbody>
+					<tr>
+						<% for( var j = 0; j < 7; j++) { %>
+							<% var d = new Date(); if(i == today[1]-1 && j == today[0]-1 && currentMonth == monthNames[d.getMonth()] && currentYear == d.getFullYear()) { %>
+								<td class="bg-table-day today"></td>
+							<% } else { %>
+								<td class="bg-table-day"></td>
+							<% } %>
+						<% } %>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	<% } %>
+</div>
