@@ -1,3 +1,5 @@
+** NOTE: Launching index.html will not show the application in Chrome because Chrome will not load local files via AJAX (Due to backbone.js). Disable this feature to view in Chrome **
+
 -completed:
 	-adding new calendar [click 'My Calendars' in top left and then create a new calendar]
 	-adding new event for a calendar [click any day in the calendar]
